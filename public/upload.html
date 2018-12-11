@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<img src=./img/upload-280-240.png alt="S3" height="220" width="190">
+		<br>
+		<title>S3 Bucket</title>
+	</head>
+	<body>
+		<p> "Upload Objects" </p>
+
+		<form method="post" action="uploadOb" enctype="multipart/form-data">
+		<fieldset>
+		  <p>Name:</p>
+		  <input type="text" name="name" id="nameob" required/>
+		  <p>E-mail:</p>
+		  <input type="email" name="email" id="emailob" required/>
+		  <p>Description:</p>
+		  <input type="text" name="description" id="descripob" required />
+		  <p>Object:</p>
+		  <input type="file" accept="image/*" name="object" required />
+		  <p><input type="submit" value=" +++ UPLOAD +++" ></p>
+		  <p><input type="reset"></p>
+		</fieldset>
+		</form>
+
+		<p><a href=index.html>&laquo; Return to main page...</a></p>
+	</body>
+</html>

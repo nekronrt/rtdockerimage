@@ -1,0 +1,20 @@
+{
+  "name": "Docker_web_App",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "Jose Ramirez",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "http": "*",
+    "url" : "*",
+    "fs": "*",
+    "querystring": "*",
+    "mysql": "*",
+    "formidable": "*",
+    "path": "*",
+    "aws-sdk": "*"
+  }
+}
