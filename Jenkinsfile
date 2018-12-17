@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("nekronrt/hellonode")
+        app = docker.build("nekronrt/web2")
     }
 
     stage('Push image') {
