@@ -9,10 +9,10 @@ node {
         checkout scm
         sh "git rev-parse HEAD > .git/commit-id"
         commit_id = readFile('.git/commit-id').trim()
-        commit_id.substring(0,6)
+        //commit_id.substring(0,6)
         //build_id = commit_id.substring(0,6)
         //build_id = mb_substr(commit_id,0,6)
-        println commit_id.substring(0,6)
+        println commit_id.substring(0,8)
     }
 
     stage('Build image') {
@@ -27,7 +27,7 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-            app.push("${commit_id}")
+            app.push("${commit_id.substring(0,8)}")
             app.push("lts")
         }
     }
