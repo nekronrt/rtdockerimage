@@ -9,7 +9,7 @@ node {
         checkout scm
         sh "git rev-parse HEAD > .git/commit-id"
         commit_id = readFile('.git/commit-id').trim()
-        build_id = substring(${commit_id},0,6)
+        build_id = commit_id.substr(6)
         println build_id
     }
 
