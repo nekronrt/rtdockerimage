@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
+        echo "My branch is: ${env.BRANCH_NAME}"
         app = docker.build("nekronrt/web2")
     }
 
@@ -20,8 +20,8 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+            app.push("${env.BRANCH_NAME}")
+            app.push("lts")
         }
     }
 }
