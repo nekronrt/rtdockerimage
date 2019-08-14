@@ -12,7 +12,7 @@ node {
         commit_id.substring(0,6)
         //build_id = commit_id.substring(0,6)
         //build_id = mb_substr(commit_id,0,6)
-        println build_id
+        println commit_id.substring(0,6)
     }
 
     stage('Build image') {
