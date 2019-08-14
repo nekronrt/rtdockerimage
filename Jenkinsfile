@@ -10,7 +10,6 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        echo "My branch is: ${BRANCH_NAME}"
         app = docker.build("nekronrt/web2")
     }
 
