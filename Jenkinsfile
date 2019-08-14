@@ -1,6 +1,7 @@
 node {
     def app
     def commit_id
+    def build_id
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
@@ -8,7 +9,8 @@ node {
         checkout scm
         sh "git rev-parse HEAD > .git/commit-id"
         commit_id = readFile('.git/commit-id').trim()
-        println commit_id
+        build_id = substr($commit_id,0,6)
+        println build_id
     }
 
     stage('Build image') {
